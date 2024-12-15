@@ -1,0 +1,560 @@
+/* Загальні стилі */
+body {
+    background-image: url('https://i.imgur.com/9bFZfTw.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    background-repeat: no-repeat;
+}
+
+/* Логотип та текст */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Зміщуємо до центру */
+    padding: 10px;
+    position: fixed; /* Фіксуємо header */
+     top: 0; 
+     left: 0;
+     right: 0;
+     z-index: 10; 
+     background-color: rgba(0, 0, 0, 0.5);
+    margin-bottom: 160px; /* Збільшуємо відступ знизу для розташування над меню */
+}
+
+.logo-text {
+    position: relative;
+    gap: 10px;
+    align-items: center;
+    margin-right: 10%; /* Зміщуємо логотип і текст на 20% вліво */
+}
+
+.logo {
+    max-width: 140px; /* Збільшено логотип */
+    height: auto;
+}
+
+
+.text {
+    position: relative;
+    max-width: 400px; /* Зменшено текст */
+    left: 10%; /* Зміщуємо фото на 20% вправо */
+    font-size: 40px; /* Збільшено текст */
+}
+
+.new-photo {
+    max-width: 80px; /* Встановлюємо такий же розмір як у логотипу */ 
+    height: auto;
+    position: relative;
+     left: 30%; /* Зміщуємо фото на 20% вправо */
+     animation: blink 1s infinite; /* Додаємо анімацію миготіння */
+     } 
+     /* Анімація миготіння */
+      @keyframes blink {
+         0% { opacity: 1; } 
+         50% { opacity: 0; } 
+         100% { opacity: 1; }
+ }
+
+
+
+.content-container{
+    transform: scale(0.7); /* Зменшує весь вміст до 70% (100% - 30%) */
+    transform-origin: center center; /* Центрування масштабу */
+    display: flex; /* Додаємо flex для центрування */
+    justify-content: center; /* Горизонтальне центрування */
+    align-items: center; /* Вертикальне центрування */
+    min-height: 100vh; /* Забезпечує висоту контейнера на весь екран */
+}
+
+
+/* Меню */
+.navbar {
+    font-size: 27px;
+    width: 100%; /* Ширина меню */
+    height: 150px;
+    background-color: rgba(44, 7, 7, 0.8); /* Прозорий чорний фон */
+    background-position: center center; /* Розміщення фону по центру */
+    background-size: cover; /* Фон займає весь блок */
+    text-align: center;
+    border-radius: 10px;
+    position: fixed; /* Змінюємо на фіксоване позиціонування */
+    top: 0%; /* Встановлюємо верхнє розташування на 50% висоти сторінки */
+    left: 50%; /* Центруємо меню горизонтально */
+    transform: translate(-50%, -50%); /* Центруємо меню за його власними розмірами */
+    box-shadow: 0 0 40px 20px rgba(255, 255, 255, 0.5); /* Збільшене світіння */
+    z-index: 10; /* Забезпечує, щоб меню перекривало інші елементи */
+}
+
+
+.navbar ul {
+    list-style-type: none;
+    padding: 45px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.navbar li {
+    position: relative;
+}
+
+.navbar a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    padding: 0 5px;
+    letter-spacing: -1px;
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar a:hover::after {
+    content: "";
+    display: inline-block;
+    width: 100%;
+    height: 2px;
+    background-color: yellow;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    animation: underline-appear 0.5s ease-in-out;
+  }
+  
+
+  @keyframes underline-appear {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+
+.home {
+    max-width: 60px; /* Зображення home зменшено в 10 разів */
+    height: auto;
+}
+
+/* Підменю */
+.dropdown {
+    font-size: 27px;
+    display: none;
+    position: absolute;
+    background-color: rgba(97, 53, 255, 0.7);
+    padding: 10px;
+    border-radius: 5px;
+    top: 100%;
+    left: 0;
+    z-index: 10;
+}
+
+.navbar li:hover .dropdown {
+    display: block;
+    
+}
+
+/* Зміна фону і тексту при наведенні */
+.dropdown a {
+    display: block;
+    margin: 15px 0; /* Збільшено відстань між пунктами */
+    padding: 5px 10px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.dropdown a:hover {
+    background-color: rgb(214, 0, 203); /* Фон стає чорним */
+    color: rgb(38, 0, 255); /* Текст білий */
+}
+
+/* Ширина підменю "Колективи" */
+.navbar li:hover .dropdown-teams {
+    width: 260px; /* Задаємо бажану ширину */
+}
+
+/* Вирівнюємо текст у ширшому підменю */
+.dropdown-teams a {
+    white-space: normal; /* Дозволяє тексту переноситися */
+}
+
+/* Крапочки для пунктів меню "Відділи" */
+.dropdown-departments a::before {
+    content: '•'; /* Крапочка перед текстом */
+    margin-right: 10px; /* Відступ між крапкою і текстом */
+    color: white; /* Колір крапочки */
+    font-size: 1.2em; /* Розмір крапочки */
+    vertical-align: middle; /* Вирівнювання по вертикалі */
+}
+
+
+
+
+
+/* Основний контент */
+.content {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    max-width: 80%;
+    margin: 320px auto 0; /* Відступ для урахування розширеного меню */
+}
+
+/* Ліва частина (слайдери і новини) */
+.left-section {
+    width: 48%;
+}
+
+/* Слайдер */
+.slider {
+    width: 1000px;
+    height: 800px;
+    margin-top: -200px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    margin-left: -220px;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    height: 100%;
+}
+
+.prev-arrow, .next-arrow {
+    position: absolute;
+    top: 50%;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    transform: translateY(-50%);
+}
+
+.prev-arrow:hover, .next-arrow:hover {
+    background: rgba(0, 0, 0, 0.8);
+    transform: scale(1.2);
+}
+
+.prev-arrow {
+    left: 10px;
+}
+
+.next-arrow {
+    right: 10px;
+}
+
+.dots-container {
+    display: flex;
+    justify-content: center;
+    margin-top: -80px;
+    position: relative;
+    z-index: 5;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: white;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: #ff5733;
+    animation: pulse 1s infinite;
+}
+
+/* Анімація пульсації крапок */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        background-color: #ff5733;
+    }
+    50% {
+        transform: scale(1.2);
+        background-color: #ff9a33;
+    }
+}
+
+/* Новини */
+.news {
+    font-size: 20px;
+    width: 1000px;
+    height: auto;
+    background: linear-gradient(135deg, #009e1a, #31ff1e);
+    padding: 20px;
+    border-radius: 10px;
+    margin-left: -240px;
+    
+}
+
+.novunu{
+      text-align: center;
+      font-size: 35px;
+      font-weight: bold;
+      background-color: #411921c7;
+      width: 100%;
+      border-radius: 7px;
+
+}
+
+.days-news{
+    display: grid;
+    grid-gap: 20px; /* Відступ між елементами */
+    margin-right: 200px;
+
+}
+
+.zagolovok{
+    font-size: 25px;
+    margin-left: 340px;
+    font-weight: bold;
+    color: black;
+    width: 60%;
+}
+
+
+iframe {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+
+.photo-news{
+    width: 100%; 
+    max-width: 500px;
+    height: auto;
+    margin: 0 auto;
+    border:none;
+    overflow: hidden;
+}
+
+
+
+
+
+/* Права частина */
+.right-section {
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+    margin-left: 170px;
+}
+
+.teacher-photo img {
+    width: 460px;
+    height: 570px;
+    transition: all 0.3s ease;
+    margin-left: 200px;
+    margin-top: -200px;
+    
+}
+
+.teacher-photo img:hover {
+    padding-right: 100px;
+    transform: scale(1.2);
+}
+
+.name {
+    width: 400px;
+    margin-left: 250px;
+    margin-top: 30px;
+    position: absolute;
+    font-family: 'Georgia', serif; /* Класичний і строгий шрифт */
+    font-size:  30px;
+    font-weight: bold; /* Жирний текст */
+    color: #fffb00; /* Темно-синій колір */
+    text-align: center; /* Центруємо текст */
+    border-bottom: 2px solid #8a0000; /* Тонка нижня лінія */;
+    text-shadow: 0 0 8px rgba(19, 1, 1, 0.568), /* Основне біле світіння */
+                 0 0 16px rgba(7, 0, 0, 0.37); /* Інтенсивніше зовнішнє світіння */
+  
+}
+
+.links {
+    background: linear-gradient(to right, rgba(150, 0, 24, 0.5), rgba(150, 0, 24, 0));
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 90%;
+    margin-top: 200px;
+    margin-left: 170px;
+    font-size: 20px;
+}     
+
+
+.posulannya{
+    font-size: 40px;
+    font-weight: bold;
+
+}
+
+
+
+.under-links {
+    font-size: 25px;
+}
+
+.under-links a {
+    color: #000; /* Звичайний колір тексту */
+    text-decoration: none; /* Прибираємо підкреслення */
+    transition: all 0.3s ease; /* Плавний ефект */
+}
+
+.under-links a:hover {
+    font-size: 28px; /* Збільшення тексту */
+    text-shadow: 0 0 10px #ffeb3b, /* Жовте світіння */
+                 0 0 20px #ffeb3b;
+    color: #ffe600; /* Змінюємо колір тексту */
+}
+
+
+
+
+
+
+.back-adress{
+    margin-top: 300px;
+    background-color: rgba(255, 255, 255, 0.5);;
+    border-radius: 10px ;
+    width: 100%;
+    height: 100%;
+    
+}
+
+
+.adresa{
+    position: center;
+    text-align: center;
+    font-size: 30px;
+    background-color: #4df864;  
+}
+
+
+.photo-adres{
+     margin-left: 200px;
+    
+}
+
+
+.text-adress{
+    position: center;
+    text-align: center;
+    font-weight: bold;
+    color: #000000;
+    font-size: 27px;
+}
+
+.text-adress1{
+    position: center;
+    text-align: center;
+    color: #000000;
+    font-size: 27px;
+}
+
+.text-adress2{
+    position: center;
+    text-align: center;
+    color: #000000;
+    font-size: 27px;
+}
+
+
+
+.map-container{
+    width: 400px;
+    height: 230px;
+    margin: auto;
+    border: 1px solid #ddd;
+    margin-left: 265px;
+}
+
+
+
+
+
+
+.social{
+    position: center;
+    text-align: center;
+    font-size: 30px;
+    background-color: #4df864;  
+}
+
+
+.facebook{
+     margin-top: 120px;
+     margin-left: 228px;
+     margin-bottom: 120px;
+    
+}
+
+
+.fb{
+    position: center;
+    text-align: center;
+    font-weight: bold;
+    color: #000000;
+    font-size: 27px;
+}
+
+
+
+.photo-admin{
+    margin-left: 450px;
+   
+}
+
+.photo-admin1{
+    margin-left: -50px;
+   
+}
+
+
+.name-admin{
+    font-size: 25px;
+    margin-left: 320px;
+    font-weight: bold;
+    color: black;
+    width: 60%;
+}
+
+
+
+
+.photo-plan{
+    margin-right:40%;
+    max-width: 100%;
+}
+
+
+.rewiew{
+    font-size: 25px;
+    margin-left: 60px;
+    font-weight: bold;
+    color: black;
+    width: 60%;
+}

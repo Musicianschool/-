@@ -1,0 +1,115 @@
+
+
+
+/* Зробимо слайдер більш зручним на маленьких екранах */
+@media (max-width: 800px) {
+
+
+    .content-container{
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .slider {
+        width: 900px;
+    }
+
+    .slider img {
+        width: 100%; /* Забезпечуємо повну ширину для слайдеру */
+        height: auto;
+        width: 900px;
+    }
+
+    
+   
+    .news{
+        width: 900px;
+    }
+
+    .left-section{
+        margin-left: 600px; 
+
+    }
+
+
+    .links{
+        width: 400px;
+        height:auto;
+        margin-left: 400px; 
+
+    }
+
+    .teacher-photo{
+        width: 100px;
+        height:auto;
+        margin-left: 200px; 
+
+    }
+
+    .name{
+         width: 650px;
+         margin-right: 160px;
+         
+
+    }
+
+    .navbar{
+        margin-left: 280px;
+        font-size: 30px;
+        width: 1200px;
+    
+        
+    }
+
+    .dropdown{
+        font-size: 30px;
+    }
+
+
+
+    .navbar ul {
+        padding: 35px;
+        font-size: 30px;
+    }
+    
+    .navbar li {
+        font-size: 30px;
+    }
+
+    .back-adress{
+       margin-top: 100px;
+       margin-left: 600px; 
+       width: 1200px;
+        
+        
+    }
+  .facebook{
+    margin-left: 320px; 
+
+
+}
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
