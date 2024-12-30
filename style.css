@@ -10,11 +10,6 @@ body {
     background-repeat: no-repeat;
 }
 
-.icon {
-   width: 200%;
-   height: 100%;
-    
- }
 /* Логотип та текст */
 .header {
     display: flex;
@@ -26,6 +21,8 @@ body {
      left: 0;
      right: 0;
      z-index: 10; 
+     height: 100%;
+     width: 100%;
      background-color: rgba(0, 0, 0, 0.5);
     margin-bottom: 160px; /* Збільшуємо відступ знизу для розташування над меню */
 }
