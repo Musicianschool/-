@@ -8,6 +8,7 @@ body {
     font-family: Arial, sans-serif;
     color: #fff;
     background-repeat: no-repeat;
+    margin-top: 400px;
 }
 
 /* Логотип та текст */
@@ -345,6 +346,8 @@ iframe {
     width: 900px; 
     height: auto;
     margin: 0 auto;
+    border:none;
+    overflow: hidden;
 }
 
 
@@ -367,6 +370,7 @@ iframe {
     transition: all 0.3s ease;
     margin-left: 200px;
     margin-top: -200px;
+    
     
 }
 
